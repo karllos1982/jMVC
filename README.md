@@ -14,7 +14,7 @@ Apenas os dados trafegam nas requisições no formato JSON. Na primeira chamada 
 <br /> 
 
 <b> Principais recursos: </b> <br />
-      
+     <ul> 
 		<li>
 			Separação lógia entre a interface (HTML) e o código controlador (jQuery). Fácil adaptação da UI ao desing. 
 		</li>
@@ -30,12 +30,12 @@ Apenas os dados trafegam nas requisições no formato JSON. Na primeira chamada 
 		<li>
 			Aplicações rápidas e sem o efeito de "postback", pois apenas os dados trafegam através da conexão HTTP. 
 		</li>
-      
+      </ul>
   <br />
     
 <b>Plugins Utilizados no Framework  </b>
    <br />    
-           
+    <ul>       
 		<li>
 		   <b>DataTables</b> : plugin de configuração e construção de tabelas de dados.
 			 <a href="https://datatables.net"> Mais detalhes </a>
@@ -51,7 +51,7 @@ Apenas os dados trafegam nas requisições no formato JSON. Na primeira chamada 
 			 <a href="https://notifyjs.com"> Mais detalhes </a>
 													
 		</li>
-                          
+     </ul>                     
         
     <br />
 	
