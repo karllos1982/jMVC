@@ -1,7 +1,9 @@
 ﻿/*
 	JMVC.UTIL.JS
-	JS Code for general operations.
-    C. Fonteles | 2016/DEZ
+	JS Code for general operations.	
+	VERSÃO 1.0 / 2017-01-05
+	DIRETÓRIO NO GITHUB:  https://github.com/karllos1982/jMVC/Framework
+    C. Fonteles 
 
 */
 

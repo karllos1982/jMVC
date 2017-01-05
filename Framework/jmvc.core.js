@@ -1,16 +1,11 @@
 ﻿/*
 	JMVC.CORE.JS
 	JS Code for Web Application Controller.
-    C. Fonteles | 2016/DEZ
+	VERSÃO 1.0 / 2017-01-05
+	DIRETÓRIO NO GITHUB:  https://github.com/karllos1982/jMVC/Framework
+    C. Fonteles 
 
 */
-
-function newitem(id, test, texto) {
-    this.IdItem = id;
-    this.IdTest = test;
-    this.Texto = texto;
-};
-
 
 (function ($) {
 
