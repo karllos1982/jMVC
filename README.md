@@ -1,5 +1,4 @@
-<h1>jMVC - JavaScript Framework for Web Application
-@ 2016 <h1>
+<h1>jMVC - JavaScript Framework for Web Applications <h1>
 
 <h2> <a href = "http://jmvc.dwsti.com"> Live Demo Aqui! </a></h2>
 

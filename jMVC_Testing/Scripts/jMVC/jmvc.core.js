@@ -225,18 +225,7 @@ function newitem(id, test, texto) {
         
             return ret;
         }
-        ,
-
-        this.ConvertChildsToJson = function (list) {
-            var ret = "";
-
-            if (list != null) {
-                ret = JSON.stringify(list);
-            }
-
-            return ret;
-        }
-
+     
     }
 
     $.View = function (DOM, columns) {

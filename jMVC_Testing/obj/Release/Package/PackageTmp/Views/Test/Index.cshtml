@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "Exemplo de Uso do jMVC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+    <h1>Exemplo de Uso do jMVC</h1>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <form id="frmSearch">
+            <div class="row" id="searchpanel">
+                <div class="col-md-4">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title"> Busca</h3>
+                        </div>
+                        
+                        <div class="box-body">
+                            <div class="form-group">
+                                <input id="pNome" name="pNome" data-mini="true" placeholder="Pesquisar por Nome" maxlength="50"
+                                       class="form-control" type="text" value="" />
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <input id="pEmail" name="pEmail" data-mini="true" placeholder="Pesquisar por E-mail" maxlength="50"
+                                       class="form-control" type="text" value="" />
+                            </div>
+                        </div>
+
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <button type="submit" id="searchbutton" class="btn btn-primary">Carregar</button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <button id="newbutton" class="btn btn-default">Novo Registro</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 loader" id="loadingpanel" style="display:none">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Procurando...</h3>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div class="col-md-8" id="tablepanel">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Resultado da busca</h3>
+                        </div>
+                        <div class="box-body">
+                            <table id="tblist" class="table table-bordered table-striped" cellspacing="0"
+                                   paginate=false lengthchange=false filter=false sort=false autowidth=false>
+                                <thead> </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+        
+        <form id="frmData">
+
+            <div id="editpanel" class="row" style="display:none">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <a id="backbutton" class="glyphicon glyphicon-arrow-left" href="#"></a><br />
+                            <h3><span id="operationtype"></span></h3>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                           
+                                        <div id="dv-lb-ID" class="form-group">
+                                            <label id="lb-ID" for="ID" class="control-label">ID</label>
+                                            <input id="ID" required="*" maxlength="4" min-length="1" class="form-control"
+                                                   name="ID" type="text" value="" displaytext="ID" labelforid="lb-ID" />
+                                        </div>
+
+                                        <div id="dv-lb-Nome" class="form-group">
+                                            <label id="lb-Nome" for="Nome" class="control-label">Nome</label>
+                                            <input id="Nome" maxlength="50" class="form-control" name="Nome" type="text" value=""
+                                                   required="*" displaytext="Nome" labelforid="lb-Nome" min-length="6" />
+                                        </div>
+
+                                        <div id="dv-lb-Email" class="form-group">
+                                            <label id="lb-Email" for="Email" class="control-label">E-mail</label>
+                                            <input id="Email" maxlength="50" class="form-control" name="Email" type="text" value=""
+                                                datatype='email'  required="*" displaytext="E-mail"  labelforid="lb-Email" min-length="6" />
+                                        </div>
+
+                                        <div id="dv-lb-DataNascimento" class="form-group">
+                                            <label id="lb-DataNascimento" for="DataNascimento" class="control-label">Data Nascimento</label>
+                                            <input id="DataNascimento" maxlength="10" class="form-control" name="DataNascimento" type="text" value=""
+                                                datatype='date'  required="*" displaytext="Data Nascimento" labelforid="lb-DataNascimento" min-length="6" />
+                                        </div>
+
+                                        <div id="dv-lb-Sexo" class="form-group">
+                                            <label id="lb-Sexo" for="Sexo" class="control-label">Sexo</label><br />
+                                            <select id="Sexo" name="Sexo" required="*" type="select" data-native-menu="false"
+                                                    displaytext="Sexo" labelforid="lb-Sexo" style="width:50%;height:30px">
+                                                <option value="0">Selecione</option>
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Feminino</option>
+                                            </select>
+
+                                        </div>
+                                      
+                                                                     
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div id="dv-lb-items" style="float:left;padding:5px">
+                                        <label id="lb-items" class="control-label"></label>
+                                        <h4> Itens </h4>
+                                    </div>
+                                    <div style="float:right;padding:5px">
+                                        <button id="addbutton" class="btn btn-primary" type="button">Novo Item</button>
+                                    </div>
+                                    <table id="tbItens" class="table table-bordered table-striped" cellspacing="0"
+                                           paginate=false lengthchange=false filter=false sort=true autowidth=true>
+                                        <thead> </thead>
+                                        <tbody></tbody>
+
+                                    </table>
+                                </div>    
+
+                            </div>
+
+                            <div class="box-footer">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <button type="submit" id="savebutton" class="btn btn-primary">Salvar</button>
+                                    </div>
+                                </div>
+
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <button type="submit" id="deletebutton" class="btn btn-danger">Excluir</button>
+                                    </div>
+                                </div>
+
+                                                                  
+                                    </div>
+
+                                </div>
+                            </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade modal-default" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h3 class="modal-title" id="lbProcessing">Novo Item</h3>
+                            <strong><span id="registering"></span></strong>
+                        </div>
+
+                        <div class="modal-body">
+                            <div id="dv-lb-IdItem2" class="form-group">
+                                <label id="lb-IdItem2" class="control-label" for="IdItem2">
+                                    ID
+                                </label>
+                                <input id="IdItem2"  maxlength="4" class="form-control"
+                                       type="text" value="" />
+                            </div>
+
+                            <div id="dv-lb-Texto" class="form-group">
+                                <label id="lb-Texto" for="Texto" class="control-label">Texto</label>
+                                <input id="Texto" maxlength="50" class="form-control" name="Texto" type="text" value=""
+                                        displaytext="Texto" labelforid="lb-Texto" />
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">                       
+                            <button id="additem" class="btn btn-primary" type="button">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+        </form>       
+
+    </div>
+
+</div>
+
+
