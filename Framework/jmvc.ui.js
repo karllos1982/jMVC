@@ -128,6 +128,11 @@ function upadateLoadingChronos() {
             if (autocomplete) { control.select2(); }
         },
 
+        clearSelect: function (control, defaultvalue, defaulttext) {
+            control.html("");
+            control.append("<option value='" + defaultvalue + "'>" + defaulttext + "</option>");            
+        },
+
         buildTable: function (data, control, columns, onCreateTemplate, afterCreateTable) {
             var ind = 0;
             var html = '';
@@ -1217,6 +1222,13 @@ function upadateLoadingChronos() {
 
         },
 
+        clearSelect: function(){
+            var inp = $(this);
+            var sets = new $.SelectSettings($(this));
+            $.DataUI.clearSelect(inp, sets.defaultvalue, sets.defaulttext);
+        }
+
+        ,
         loadTable: function (isremote, source, columns, formid, onCreateTemplate, afterCreateTable) {
             var inp = $(this);
 

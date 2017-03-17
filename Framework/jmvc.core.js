@@ -317,7 +317,7 @@
                 _DOM.editpanel.slideDown("slow");
                 _DOM.operationtype.html('EDITAR REGISTRO');
                 _DOM.messagepanel.html('');
-                operationtype.focus();
+                _DOM.operationtype.focus();
             }
             else {
                 $.Widgets.hideModalLoading();
